@@ -3,8 +3,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mailchimp = require('@mailchimp/mailchimp_marketing');
 // variable Declaration
-const localPort = express();
-const port = 3000;
+const app = express();
+const localPort = 3000;
 
 // initialize external file
 app.use(bodyParser.urlencoded({extended: true}));
@@ -58,7 +58,7 @@ app.post('/failure', (req, res) => {
 
 
 app.listen(process.env.PORT || localPort, ()=>{
-    console.log(`...server is running on port ${port}`);
+    console.log(`...server is running on port ${localPort}`);
 });
 
 // API key
